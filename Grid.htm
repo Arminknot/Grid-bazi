@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grid Photo</title>
+    <style>
+        @font-face {
+            src: url("fonts/IRANSansWeb.ttf");
+            font-family: iransansweb;
+        }
+        
+        body {
+            background: url("pic/06.png");
+        }
+        
+        #all {
+            padding-top: 2px;
+            box-shadow: 0px 0px 5px 0.3px gray;
+            background: rgba(255, 255, 255, 0.589);
+            //border: 1px solid #ccc;
+            width: 700px;
+            //padding: 10px;
+            margin: 100px auto;
+            font-family: san;
+            text-align: center;
+            line-height: 35px;
+            color: white;
+        }
+        
+        #all>#big {
+            overflow: hidden;
+            position: relative;
+            //border: 1px solid #ccc;
+            height: 437px;
+            margin: 10px 10px 0 10px;
+        }
+        
+        #all>#big>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #all>#big:hover>.toz {
+            right: 0;
+        }
+        
+        #all>#big>.toz {
+            transition: 0.2s;
+            background: rgba(255, 0, 140, 0.808);
+            position: absolute;
+            top: 50px;
+            right: -350px;
+            width: 50%;
+            height: 40px;
+        }
+        
+        #all>#big:hover>.toz>p {
+            height: 80px;
+            line-height: 80px;
+            color: rgb(29, 29, 29);
+        }
+        
+        #all>#big>.toz>p {
+            transition-delay: 0.2s;
+            transition-duration: 0.5s;
+            background: rgba(255, 255, 255, 0.575);
+            height: 0px;
+            line-height: 10px;
+            color: transparent;
+            margin-top: 5px;
+        }
+        
+        #all>#but {
+            cursor: pointer;
+            height: 40px;
+            color: white;
+            background: rgba(255, 0, 140, 0.856);
+            font-family: san;
+            margin: 10px 10px 10px 10px;
+        }
+        
+        #all>#grid {
+            //border: 1px solid #ccc;
+            height: 500px;
+            padding: 0 10px 0 10px;
+        }
+        
+        #all>#grid>.items {
+            overflow: hidden;
+            width: 220px;
+            height: 137px;
+            margin: px;
+            float: left;
+        }
+        
+        #all>#grid>.items>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #all>#grid>.items:hover>div {
+            top: -74px;
+            right: 0;
+        }
+        
+        #all>#grid>.items>div {
+            transition: 0.3s;
+            position: relative;
+            top: -74px;
+            right: -220px;
+            background: rgba(255, 255, 255, 0.61);
+            color: rgb(24, 24, 24);
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        #all>#grid>.items>div>p {
+            background: rgba(255, 0, 140, 0.801);
+            margin-top: 0px;
+            height: 30px;
+            color: #fff;
+        }
+        
+        .ii1 {
+            margin: 0 10px 10px 0;
+        }
+        
+        .ii3 {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="all">
+
+        <div id="big">
+            <img id="big_img" src="pic/01.jpg">
+            <div class="toz">توضیحات
+                <p id="big_toz"> توضیحات بیشتر </p>
+            </div>
+        </div>
+
+        <div id="but">نمایش بیشتر</div>
+
+        <div id="grid">
+
+            <div class="items ii1" onclick="show(1)">
+                <img src="pic/01.jpg">
+                <div>Mazda 6
+                    <p> 40.000 $ </p>
+                </div>
+            </div>
+
+            <div class="items ii1" onclick="show(2)">
+                <img src="pic/02.jpg">
+                <div>Chevrolet Concept
+                    <p> 100.000 $ </p>
+                </div>
+            </div>
+
+            <div class="items ii3" onclick="show(3)">
+                <img src="pic/03.jpg">
+                <div>Ferrari LaFerrari
+                    <p> 550.000 $</p>
+                </div>
+            </div>
+
+            <div class="items ii1" onclick="show(4)">
+                <img src="pic/04.jpg">
+                <div>BMW i8
+                    <p> 370.000 $ </p>
+                </div>
+            </div>
+
+            <div class="items ii1" onclick="show(5)">
+                <img src="pic/05.jpg">
+                <div>Mercedes C4 AMG
+                    <p> 230.000 $ </p>
+                </div>
+            </div>
+
+            <div class="items ii3" onclick="show(6)">
+                <img src="pic/06.jpg">
+                <div>Plymoth Muscle
+                    <p> 50.000 $</p>
+                </div>
+            </div>
+
+            <div class="items ii1" onclick="show(7)">
+                <img src="pic/07.jpg">
+                <div>Pagani Zonda
+                    <p> 630.000 $ </p>
+                </div>
+            </div>
+
+            <div class="items ii1" onclick="show(8)">
+                <img src="pic/08.jpg">
+                <div>Tesla S
+                    <p> 270.000 $ </p>
+                </div>
+            </div>
+
+            <div class="items ii3" onclick="show(9)">
+                <img src="pic/09.jpg">
+                <div>Volvo XC60
+                    <p> 310.000 $</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function show(i) {
+            big_img.src = "pic/0" + i + ".jpg ";
+            big_toz.innerHTML = " آیتم شماره " + i;
+        }
+    </script>
+
+</body>
+
+</html>
